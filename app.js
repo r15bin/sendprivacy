@@ -125,18 +125,17 @@ update();
   const btn = document.getElementById("shareButton");
   if (!btn) return;
 
-  // What you want to share
   const getShareData = () => {
-    const url = window.location.href; // or a specific page URL
+    const url = window.location.href;
     return {
       title: document.title,
-      text: "Check this out:", // optional
+      text: "Check this out:",
       url
     };
   };
 
   const copyFallback = async (text) => {
-    // 1) Modern clipboard API (best)
+
     try {
       if (navigator.clipboard?.writeText) {
         await navigator.clipboard.writeText(text);
@@ -144,7 +143,6 @@ update();
       }
     } catch (_) {}
 
-    // 2) Old-school execCommand fallback
     try {
       const ta = document.createElement("textarea");
       ta.value = text;
@@ -169,24 +167,20 @@ update();
     const data = getShareData();
     const urlToCopy = data.url;
 
-    // Try native share sheet (mostly mobile, some desktop browsers)
     try {
       if (navigator.share && (!navigator.canShare || navigator.canShare(data))) {
         await navigator.share(data);
         return;
       }
     } catch (_) {
-      // user cancelled or share failed -> fall back to copy
     }
 
     const copied = await copyFallback(urlToCopy);
 
-    // Optional UI feedback
     const original = btn.textContent;
-    btn.textContent = copied ? "Link copied" : "Copy failed";
+    btn.textContent = copied ? "Link copied" : "Send Privacy";
     setTimeout(() => (btn.textContent = original), 1200);
 
-    // If copy failed, at least open the URL so user can copy manually
     if (!copied) {
       window.open(urlToCopy, "_blank", "noopener,noreferrer");
     }
