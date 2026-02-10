@@ -231,10 +231,6 @@ a {
         padding: 0.5vh 1vw;
         transition: none;
     }
-
-    #shareSection a:hover {
-        display: none;
-    }
 }
 
 /* Mobile devices */
