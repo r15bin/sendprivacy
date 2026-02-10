@@ -110,19 +110,29 @@ links.forEach(link => {
 // SCROLLBAR
 
 const thumb = document.getElementById("scrollbarProgress");
+
+function getScroller() {
+  return (getComputedStyle(document.body).overflowY !== "visible")
+    ? document.body
+    : document.scrollingElement || document.documentElement;
+}
+
 function update() {
-  const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
-  const pct = (scrollY / max) * 100;
+  const scroller = getScroller();
+  const max = Math.max(1, scroller.scrollHeight - scroller.clientHeight);
+  const pct = (scroller.scrollTop / max) * 100;
   thumb.style.width = pct + "%";
 }
-addEventListener("scroll", update, { passive: true });
-addEventListener("resize", update);
+
+window.addEventListener("scroll", update, { passive: true });
+document.body.addEventListener("scroll", update, { passive: true });
+window.addEventListener("resize", update);
 update();
 
 // SHARE
 
 (() => {
-  const btn = document.getElementById("shareButton");
+  const btn = document.getElementById("sendButtonLink");
   if (!btn) return;
 
   const getShareData = () => {
@@ -186,3 +196,4 @@ update();
     }
   }, { passive: false });
 })();
+
