@@ -34,7 +34,7 @@
 }
 
 #scrollbarTrack {
-    position: fixed; bottom: 0; left: -10px; right: -10px;
+    position: fixed; top: 0; left: -10px; right: -10px;
     height: 3px;
     background: none;
     z-index: 9999;
