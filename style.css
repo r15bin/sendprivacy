@@ -49,6 +49,10 @@
     border-top-right-radius: 15px;
 }
 
+html, body {
+    height: 100%;
+}
+
 html {
     overscroll-behavior: none;
     overflow-x: hidden;
@@ -58,6 +62,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
 }
 
 section {
@@ -67,7 +73,10 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 5vh;
+    min-height: 100vh;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    padding: 30vh 0;
 }
 
     .text {
@@ -105,21 +114,21 @@ a {
 
 /* SHARE */
 
-#shareSection {
+#sendButton {
     position: fixed;
-    bottom: -5vh;
+    bottom: 0;
     left: 0;
     z-index: 9999;
     width: 100vw;
-    height: 12vh;
+    height: 5vh;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 0;
     background: none;
 }
 
-    #shareSection a {
+    #sendButton a {
         background: var(--blue);
         display: flex;
         align-items: center;
@@ -127,49 +136,32 @@ a {
         color: var(--dark);
         font-size: 0.8rem;
         box-shadow: 0 0 15px 0 var(--blue);
-        width: 30%;
+        width: 25%;
         height: 100%;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
-        padding: 0.5vh 1.5vw;
-        margin-bottom: 5vh;
+        padding: 1.5vh 1.5vw;
         transition: 0.5s ease-in-out;
         font-family: SixtyFour, display;
         text-transform: uppercase;
     }
 
-    #shareSection a:hover {
+    #sendButton a:hover {
         width: 100%;
-        padding: 0 0;
         border-radius: 0;
     }
 
-/* TEXT */
-
-#introSection {
-    text-align: start;
-    align-items: flex-start;
-    line-height: 2.5;
-}
-
 /* EXAMPLES */
 
-#exampleSection {
+.exampleSection {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 70vw;
+    width: 60vw;
 }
 
-    .example {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #exampleSection a {
+    .exampleSection a {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -178,28 +170,19 @@ a {
         line-height: 2.5;
         font-size: 1rem;
         text-transform: uppercase;
-        margin-bottom: 1.5vh;
+        margin-bottom: 5vh;
         transition: 0.15s ease-in-out;
     }
 
-    #exampleSection a:hover {
+    .exampleSection a:hover {
             color: var(--blue);
             text-shadow: 0 0 15px var(--blue);
             transform: scale(1.05);
     }
 
-    .divider {
-        width: 50%;
-        height: 1px;
-        background: var(--light);
-        margin: 3vh 0;
-        opacity: 0.25;
-        border-radius: 15px;
-    }
-
 /* FOOTER */
 
-#footerSection {
+#footer {
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -208,7 +191,7 @@ a {
     margin-bottom: 10vh;
 }
 
-    #footerSection a, #footerSection p {
+    #footer a, #footer p {
         font-size: 0.8rem;
         color: var(--light);
         padding-bottom: 1.5vh;
@@ -224,11 +207,11 @@ a {
         display: none;
     }
 
-    #shareSection {
+    #sendButton {
         height: 15vh;
     }
 
-    #shareSection a {
+    #sendButtonLink a {
         transition: none;
     }
 
@@ -264,11 +247,11 @@ a {
         font-size: 0.9rem;
     }
 
-    #shareSection {
+    #sendButton {
         height: 15vh;
     }
 
-    #shareSection a {
+    #sendButtonLink a {
         width: 100%;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
