@@ -33,29 +33,13 @@
     display: none;
 }
 
-#scrollbarTrack {
-    position: fixed; top: 0; left: -10px; right: -10px;
-    height: 3px;
-    background: none;
-    z-index: 9999;
-}
-
-#scrollbarProgress {
-    height: 100%;
-    width: 0%;
-    background: var(--blue);
-    box-shadow: 0 0 15px 0 var(--blue);
-    border-bottom-right-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
 html, body {
     height: 100%;
 }
 
 html {
     overscroll-behavior: none;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 body {
@@ -72,45 +56,40 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 100vh;
     scroll-snap-align: center;
     scroll-snap-stop: always;
-    padding: 30vh 0;
+    padding: 10vh 0;
+    position: relative;
 }
 
-    .text {
+    .primaryText {
+        text-align: center;
         width: 40vw;
         line-height: 2.5;
     }
 
+    .secondaryText {
+        text-align: center;
+        width: 30vw;
+        line-height: 1.5;
+        font-size: 0.8rem;
+        margin-top: 10vh;
+        position: absolute;
+        bottom: 20vh;
+    }
+
+        .secondaryText p, .secondaryText a {
+            color: var(--link);
+            font-size: 0.8rem;
+        }
+
 a {
-    position: relative;
     text-decoration: none;
     background: none;
     overflow: visible;
-    color: var(--link);
 }
-
-/* MOUSE TRAIL */
-
-#trail {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    background: none;
-    pointer-events: none;
-}
-
-    #trail path {
-        fill: none;
-        stroke: var(--blue);
-        opacity: 0.5;
-        stroke-width: 3px;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-    }
 
 /* SHARE */
 
@@ -120,7 +99,7 @@ a {
     left: 0;
     z-index: 9999;
     width: 100vw;
-    height: 5vh;
+    height: 7vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,7 +107,7 @@ a {
     background: none;
 }
 
-    #sendButton a {
+    #sendButtonLink {
         background: var(--blue);
         display: flex;
         align-items: center;
@@ -142,11 +121,12 @@ a {
         border-top-right-radius: 15px;
         padding: 1.5vh 1.5vw;
         transition: 0.5s ease-in-out;
-        font-family: SixtyFour, display;
+        font-size: 1.2rem;
+        font-weight: 600;
         text-transform: uppercase;
     }
 
-    #sendButton a:hover {
+    #sendButtonLink:hover {
         width: 100%;
         border-radius: 0;
     }
@@ -154,11 +134,8 @@ a {
 /* EXAMPLES */
 
 .exampleSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 60vw;
+    padding-top: 20vh;
 }
 
     .exampleSection a {
@@ -180,21 +157,48 @@ a {
             transform: scale(1.05);
     }
 
-/* FOOTER */
+    .exampleSection p {
+        font-size: 0.9rem;
+        color: var(--link);
+    
+    }
 
-#footer {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 10vh;
+/* MOUSE TRAIL */
+
+#trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background: none;
+    pointer-events: none;
 }
 
-    #footer a, #footer p {
-        font-size: 0.8rem;
-        color: var(--light);
-        padding-bottom: 1.5vh;
+    #trail path {
+        fill: none;
+        stroke: var(--blue);
+        opacity: 0.5;
+        stroke-width: 3px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+/* SCROLLBAR */
+
+#scrollbarTrack {
+    position: fixed; top: 0; left: -10px; right: -10px;
+    height: 3px;
+    background: none;
+    z-index: 9999;
+}
+
+    #scrollbarProgress {
+        height: 100%;
+        width: 0%;
+        background: var(--blue);
+        box-shadow: 0 0 15px 0 var(--blue);
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
     }
 
 /* RESPONSIVENESS */
@@ -208,11 +212,19 @@ a {
     }
 
     #sendButton {
-        height: 15vh;
+        height: 12vh;
+        margin-bottom: 5vh;
     }
 
-    #sendButtonLink a {
+    #sendButtonLink {
         transition: none;
+        width: 80%;
+        border-radius: 15px;
+        font-size: 1.2rem;
+    }
+
+    #exampleSection {
+        width: 90vw;
     }
 
     #exampleSection a {
@@ -248,16 +260,12 @@ a {
     }
 
     #sendButton {
-        height: 15vh;
+        height: 12vh;
     }
 
-    #sendButtonLink a {
-        width: 100%;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        transition: none;
+    #sendButtonLink {
+        width: 70%;
     }
-
 }
 
 /* Extra small devices (phones, 600px and down) */
