@@ -144,8 +144,8 @@ a {
         justify-content: center;
         text-align: center;
         font-family: SixtyFour, display;
-        line-height: 2.5;
-        font-size: 1rem;
+        line-height: 3.5;
+        font-size: 1.5rem;
         text-transform: uppercase;
         margin-bottom: 5vh;
         transition: 0.15s ease-in-out;
@@ -222,15 +222,6 @@ a {
         border-radius: 15px;
         font-size: 1.2rem;
     }
-
-    #exampleSection {
-        width: 90vw;
-    }
-
-    #exampleSection a {
-        color: var(--blue);
-        text-shadow: 0 0 15px var(--blue);
-    }
 }
 
 /* Mobile devices */
@@ -247,15 +238,17 @@ a {
         font-size: 1.1rem;
     }
 
-    #exampleSection {
-        width: 90vw;
+    .exampleSection {
+        width: 80vw;
+        padding-top: 25vh;
     }
 
-    #exampleSection a {
-        font-size: 1rem;
+    .exampleSection a {
+        font-size: 0.9rem;
+        line-height: 3.5;
     }
 
-    #exampleSection p {
+    .exampleSection p {
         font-size: 0.9rem;
     }
 
