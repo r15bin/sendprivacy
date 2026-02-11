@@ -237,6 +237,16 @@ a {
         width: 70vw;
         bottom: 25vh;
     }
+
+    .exampleSection a {
+        transition: none;
+    }
+
+    .exampleSection a:hover {
+        color: var(--light);
+        text-shadow: none;
+        transform: none;
+    }
 }
 
 /* Mobile devices */
