@@ -72,14 +72,14 @@ section {
         text-align: center;
         width: 40vw;
         line-height: 2.5;
-        padding-top: 10vh;
+        margin-top: 10vh;
     }
 
     .secondaryText {
         text-align: center;
         width: 30vw;
         line-height: 1.5;
-        padding-top: 10vh;
+        margin-top: 10vh;
         position: absolute;
         bottom: 20vh;
     }
