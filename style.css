@@ -29,38 +29,41 @@
     -ms-user-select: none;
 }
 
-*::-webkit-scrollbar {
-    display: none;
-}
+    *::-webkit-scrollbar {
+        display: none;
+    }
 
 html, body {
     height: 100%;
 }
 
-html {
-    overscroll-behavior: none;
-    overflow: hidden;
-}
+    html {
+        overscroll-behavior: none;
+        overflow: hidden;
+    }
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
+    }
+
+a {
+    text-decoration: none;
+    background: none;
 }
 
 section {
-    overflow: visible;
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     scroll-snap-stop: always;
-    padding: 10vh 0;
     position: relative;
 }
 
@@ -68,13 +71,13 @@ section {
         text-align: center;
         width: 40vw;
         line-height: 2.5;
+        padding-top: 10vh;
     }
 
     .secondaryText {
         text-align: center;
         width: 30vw;
         line-height: 1.5;
-        font-size: 0.8rem;
         padding-top: 10vh;
         position: absolute;
         bottom: 20vh;
@@ -84,12 +87,6 @@ section {
             color: var(--link);
             font-size: 0.8rem;
         }
-
-a {
-    text-decoration: none;
-    background: none;
-    overflow: visible;
-}
 
 /* SHARE */
 
@@ -103,7 +100,6 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 0;
     background: none;
 }
 
@@ -113,7 +109,6 @@ a {
         align-items: center;
         justify-content: center;
         color: var(--dark);
-        font-size: 0.8rem;
         box-shadow: 0 0 15px 0 var(--blue);
         width: 25%;
         height: 100%;
@@ -217,17 +212,17 @@ a {
         margin-bottom: 5vh;
     }
 
-    #sendButtonLink {
-        transition: none;
-        width: 80%;
-        border-radius: 15px;
-        font-size: 1.2rem;
-    }
+        #sendButtonLink {
+            transition: none;
+            width: 80%;
+            border-radius: 15px;
+            font-size: 1.2rem;
+        }
 
-    #sendButtonLink:hover {
-        width: 70%;
-        border-radius: 15px;
-    }
+        #sendButtonLink:hover {
+            width: 70%;
+            border-radius: 15px;
+        }
 
     .primaryText {
         width: 80vw;
@@ -242,48 +237,24 @@ a {
         transition: none;
     }
 
-    .exampleSection a:hover {
-        color: var(--light);
-        text-shadow: none;
-        transform: none;
-    }
+        .exampleSection a:hover {
+            color: var(--light);
+            text-shadow: none;
+            transform: none;
+        }
 }
 
 /* Mobile devices */
 
 @media only screen and (max-width: 991px) {
 
-    .text {
-        width: 80vw;
-        line-height: 2.5;
-        text-align: justify;
-    }
-
-    .text p {
-        font-size: 1.1rem;
-    }
-
-    .exampleSection {
-        width: 80vw;
-        padding-top: 25vh;
-    }
-
-    .exampleSection a {
-        font-size: 0.9rem;
-        line-height: 3.5;
-    }
-
-    .exampleSection p {
-        font-size: 0.9rem;
-    }
-
     #sendButton {
         height: 12vh;
     }
 
-    #sendButtonLink {
-        width: 70%;
-    }
+        #sendButtonLink {
+            width: 70%;
+        }
 
     .primaryText {
         width: 80vw;
@@ -292,6 +263,20 @@ a {
     .secondaryText {
         width: 70vw;
     }
+    
+    .exampleSection {
+        width: 80vw;
+        padding-top: 25vh;
+    }
+
+        .exampleSection a {
+            font-size: 0.9rem;
+            line-height: 3.5;
+        }
+
+        .exampleSection p {
+            font-size: 0.9rem;
+        }
 }
 
 /* Extra small devices (phones, 600px and down) */
