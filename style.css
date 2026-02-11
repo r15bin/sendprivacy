@@ -75,7 +75,7 @@ section {
         width: 30vw;
         line-height: 1.5;
         font-size: 0.8rem;
-        margin-top: 10vh;
+        padding-top: 10vh;
         position: absolute;
         bottom: 20vh;
     }
@@ -222,6 +222,20 @@ a {
         border-radius: 15px;
         font-size: 1.2rem;
     }
+
+    #sendButtonLink:hover {
+        width: 80%;
+        border-radius: 15px;
+    }
+
+    .primaryText {
+        width: 80vw;
+    }
+
+    .secondaryText {
+        width: 70vw;
+        bottom: 25vh;
+    }
 }
 
 /* Mobile devices */
@@ -258,6 +272,14 @@ a {
 
     #sendButtonLink {
         width: 70%;
+    }
+
+    .primaryText {
+        width: 80vw;
+    }
+
+    .secondaryText {
+        width: 70vw;
     }
 }
 
