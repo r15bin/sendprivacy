@@ -68,11 +68,29 @@ section {
     position: relative;
 }
 
+    .headlineText {
+        padding-top: 20vh;
+        width: 60vw;
+    }
+
+        .headlineText p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: SixtyFour, serif;
+            line-height: 3.5;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px var(--light);
+        }
+
     .primaryText {
         text-align: center;
         width: 40vw;
         line-height: 2.5;
         margin-top: 10vh;
+        font-size: 1.2rem;
     }
 
     .secondaryText {
@@ -82,11 +100,33 @@ section {
         margin-top: 10vh;
         position: absolute;
         bottom: 20vh;
+        text-transform: uppercase;
     }
 
         .secondaryText p, .secondaryText a {
             color: var(--link);
             font-size: 0.8rem;
+        }
+
+        .secondaryText a {
+            text-transform: lowercase;
+        }
+
+    .linkText {
+        text-align: center;
+        width: 40vw;
+        line-height: 2.5;
+        display: flex;
+        flex-direction: column;
+        padding-top: 10vh;
+    }
+
+        .linkText a {
+            color: var(--link)
+        }
+
+        .linkText a:hover {
+            color: var(--blue)
         }
 
 /* SHARE */
@@ -140,12 +180,13 @@ section {
         align-items: center;
         justify-content: center;
         text-align: center;
-        font-family: SixtyFour, display;
+        font-family: SixtyFour, serif;
         line-height: 3.5;
         font-size: 1.5rem;
         text-transform: uppercase;
         margin-bottom: 5vh;
         transition: 0.15s ease-in-out;
+        text-shadow: 0 0 15px var(--light);
     }
 
     .exampleSection a:hover {
@@ -259,6 +300,7 @@ section {
 
     .primaryText {
         width: 80vw;
+        font-size: 1rem;
     }
 
     .secondaryText {
